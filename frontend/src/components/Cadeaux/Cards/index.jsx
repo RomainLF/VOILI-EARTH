@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import SCards from "./style";
 
 export default function Cards({
@@ -13,6 +14,8 @@ export default function Cards({
   color3,
   color4,
   Price,
+  maincolor1,
+  maincolor2,
 }) {
   const [selected, setSelected] = useState(img1);
 
@@ -26,40 +29,48 @@ export default function Cards({
         <div className="Card">{Name}</div>
         <div className="Price">{Price},99 €</div>
         <div className="MainColor">
-          <img
-            src={color1}
-            value={color1}
-            alt="color1"
-            className="color"
-            onMouseEnter={() => {
-              setSelected(img1);
-            }}
-          />
-          <img
-            src={color2}
-            value={color2}
-            alt="color2"
-            className="color"
-            onMouseEnter={() => {
-              setSelected(img2);
-            }}
-          />
-          <img
-            src={color3}
-            alt="color3"
-            className="color"
-            onMouseEnter={() => {
-              setSelected(img3);
-            }}
-          />
-          <img
-            src={color4}
-            alt="color4"
-            className="color"
-            onMouseEnter={() => {
-              setSelected(img4);
-            }}
-          />
+          <Link to={`/Cadeaux/:${maincolor1}`}>
+            <img
+              src={color1}
+              value={maincolor1}
+              alt="color1"
+              className="color"
+              onMouseEnter={() => {
+                setSelected(img1);
+              }}
+            />
+          </Link>
+          <Link to={`/Cadeaux/:${maincolor2}`}>
+            <img
+              src={color2}
+              value={maincolor2}
+              alt="color2"
+              className="color"
+              onMouseEnter={() => {
+                setSelected(img2);
+              }}
+            />
+          </Link>
+          <Link to="/">
+            <img
+              src={color3}
+              alt="color3"
+              className="color"
+              onMouseEnter={() => {
+                setSelected(img3);
+              }}
+            />
+          </Link>
+          <Link to="/">
+            <img
+              src={color4}
+              alt="color4"
+              className="color"
+              onMouseEnter={() => {
+                setSelected(img4);
+              }}
+            />
+          </Link>
         </div>
       </section>
     </SCards>
@@ -76,4 +87,6 @@ Cards.propTypes = {
   color3: PropTypes.string.isRequired,
   color4: PropTypes.string.isRequired,
   Price: PropTypes.number.isRequired,
+  maincolor1: PropTypes.string.isRequired,
+  maincolor2: PropTypes.string.isRequired,
 };
