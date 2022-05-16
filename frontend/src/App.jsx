@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Monde from "./pages/Monde";
 import SGlobal from "./style";
 import Category from "./components/Category";
+import Cadeaux from "./components/Cadeaux";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Monde" element={<Monde />} />
         <Route path="/Homme" element={<Category />} />
+        <Route path="/Cadeaux" element={<Cadeaux />} />
       </Routes>
       <Footer />
     </SGlobal>

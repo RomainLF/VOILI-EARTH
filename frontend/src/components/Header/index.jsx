@@ -59,7 +59,9 @@ export default function Header() {
           </li>
 
           <li className="maison">La maison</li>
-          <li className="cadeaux">Cadeaux</li>
+          <li className="cadeaux">
+            <Link to="/Cadeaux">Cadeaux</Link>
+          </li>
           <li className="wor">World of rl</li>
           <li className="services">Services</li>
           <div className="footerNav">
