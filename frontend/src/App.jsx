@@ -7,19 +7,22 @@ import SGlobal from "./style";
 import Category from "./components/Category";
 import Cadeaux from "./components/Cadeaux";
 import ProductsBio from "./components/ProductsBio";
+import { StateContext } from "./services/Contexts/context";
 
 function App() {
   return (
     <SGlobal>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Monde" element={<Monde />} />
-        <Route path="/Homme" element={<Category />} />
-        <Route path="/Cadeaux" element={<Cadeaux />} />
-        <Route path="/Cadeaux/:products" element={<ProductsBio />} />
-      </Routes>
-      <Footer />
+      <StateContext>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Monde" element={<Monde />} />
+          <Route path="/Homme" element={<Category />} />
+          <Route path="/Cadeaux" element={<Cadeaux />} />
+          <Route path="/Cadeaux/:products" element={<ProductsBio />} />
+        </Routes>
+        <Footer />
+      </StateContext>
     </SGlobal>
   );
 }

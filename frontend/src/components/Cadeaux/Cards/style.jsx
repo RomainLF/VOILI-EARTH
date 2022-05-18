@@ -31,7 +31,7 @@ export default styled.section`
     .MainColor {
       background-color: #ffffff;
       width: 100%;
-      .color {
+      button {
         aspect-ratio: 1/1;
         width: 7%;
         margin-right: 5%;

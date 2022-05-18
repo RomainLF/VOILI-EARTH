@@ -32,6 +32,8 @@ export default function Category() {
               color4={card.color4}
               maincolor1={card.maincolor1}
               maincolor2={card.maincolor2}
+              maincolor3={card.maincolor3}
+              maincolor4={card.maincolor4}
             />
           </li>
         ))}

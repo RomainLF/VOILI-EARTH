@@ -16,8 +16,29 @@ export default function Cards({
   Price,
   maincolor1,
   maincolor2,
+  maincolor3,
+  maincolor4,
 }) {
   const [selected, setSelected] = useState(img1);
+
+  const css = `
+  button{
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  .color1{
+    background-image: url(${color1});
+  }
+  .color2{
+    background-image: url(${color2});
+  }
+  .color3{
+    background-image: url(${color3});
+  }
+  .color4{
+    background-image: url(${color4});
+  }
+  `;
 
   return (
     <SCards>
@@ -30,42 +51,45 @@ export default function Cards({
         <div className="Price">{Price},99 €</div>
         <div className="MainColor">
           <Link to={`/Cadeaux/:${maincolor1}`}>
-            <img
-              src={color1}
+            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+            <button
               value={maincolor1}
-              alt="color1"
-              className="color"
+              type="button"
+              className="color color1"
               onMouseEnter={() => {
                 setSelected(img1);
               }}
             />
           </Link>
           <Link to={`/Cadeaux/:${maincolor2}`}>
-            <img
-              src={color2}
+            <style>{css}</style>
+            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+            <button
               value={maincolor2}
-              alt="color2"
-              className="color"
+              type="button"
+              className="color color2"
               onMouseEnter={() => {
                 setSelected(img2);
               }}
             />
           </Link>
-          <Link to="/">
-            <img
-              src={color3}
-              alt="color3"
-              className="color"
+          <Link to={`/Cadeaux/:${maincolor3}`}>
+            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+            <button
+              value={maincolor3}
+              type="button"
+              className="color color3"
               onMouseEnter={() => {
                 setSelected(img3);
               }}
             />
           </Link>
-          <Link to="/">
-            <img
-              src={color4}
-              alt="color4"
-              className="color"
+          <Link to={`/Cadeaux/:${maincolor4}`}>
+            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+            <button
+              value={maincolor4}
+              type="button"
+              className="color color4"
               onMouseEnter={() => {
                 setSelected(img4);
               }}
@@ -81,12 +105,14 @@ Cards.propTypes = {
   img2: PropTypes.string.isRequired,
   img3: PropTypes.string.isRequired,
   img4: PropTypes.string.isRequired,
-  Name: PropTypes.string.isRequired,
   color1: PropTypes.string.isRequired,
   color2: PropTypes.string.isRequired,
   color3: PropTypes.string.isRequired,
   color4: PropTypes.string.isRequired,
+  Name: PropTypes.string.isRequired,
   Price: PropTypes.number.isRequired,
   maincolor1: PropTypes.string.isRequired,
   maincolor2: PropTypes.string.isRequired,
+  maincolor3: PropTypes.string.isRequired,
+  maincolor4: PropTypes.string.isRequired,
 };
