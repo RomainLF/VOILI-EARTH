@@ -6,6 +6,7 @@ import SCategory from "./style";
 export default function Category() {
   const [dataProducts, setDataProducts] = useState([]);
 
+  // api call data => sql 1//
   useEffect(() => {
     axios.get("http://localhost:5050/MainProductsMen").then(({ data }) => {
       setDataProducts(data);
