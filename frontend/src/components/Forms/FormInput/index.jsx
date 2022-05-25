@@ -31,7 +31,7 @@ function FormInput(props) {
 }
 
 export default FormInput;
-
+// revoir les propTypes
 FormInput.propTypes = {
   label: PropTypes.string.isRequired,
   errorMessage: PropTypes.string.isRequired,
