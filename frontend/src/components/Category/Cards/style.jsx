@@ -16,5 +16,11 @@ export default styled.section`
         height: 100%;
       }
     }
+    .red {
+      background-color: red;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+    }
   }
 `;
