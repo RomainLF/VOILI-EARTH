@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Forms from "@components/Forms";
 import SHeader from "./style";
 import img from "../pictures/pictos/ProfilBlanc.png";
 import img2 from "../pictures/pictos/PanierBlanc.png";
@@ -30,6 +31,8 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState();
   // Click sur loupe
   const [isOpenSearch, setIsOpenSearch] = useState();
+  // Click sur connect
+  const [isOpenConnect, setIsOpenConnect] = useState();
 
   return (
     <SHeader>
@@ -90,8 +93,14 @@ export default function Header() {
             <NavSearch openSearch={isOpenSearch} />
           </div>
 
-          <div className="compte__picto">
+          <div
+            className="compte__picto"
+            onClick={() => {
+              setIsOpenConnect(!isOpenConnect);
+            }}
+          >
             <img src={img} alt="img" className="picto" />
+            <Forms openConnect={isOpenConnect} />
           </div>
 
           <div

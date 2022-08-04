@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export default styled.section`
-  padding-top: 5em;
-  margin-left: 2em;
+  //padding-top: 5em;
+  margin-left: -52em;
+  margin-top: 40em;
   .main_card {
     background-color: #092858;
     width: 22em;

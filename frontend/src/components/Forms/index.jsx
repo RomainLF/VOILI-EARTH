@@ -2,7 +2,11 @@ import { useState } from "react";
 import FormInput from "./FormInput";
 import SForms from "./style";
 
-export default function Forms() {
+function Forms(openConnect) {
+  if (openConnect) {
+    return null;
+  }
+
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -10,7 +14,6 @@ export default function Forms() {
     password: "",
     confirmPassword: "",
   });
-
   const inputs = [
     {
       id: 1,
@@ -99,3 +102,5 @@ export default function Forms() {
     </SForms>
   );
 }
+
+export default Forms;
